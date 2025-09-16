@@ -1,10 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using NoteMind.DAL.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using NoteMind.DAL.Repositories.Interfaces;
 
 namespace NoteMind.DAL.Repositories
 {

@@ -2,7 +2,7 @@
 
 namespace NoteMind.DAL
 {
-    public class NoteMindDbContext : NoteMindDbContext
+    public class NoteMindDbContext : DbContext
     {
         public DbSet<Task> Tasks { get; set; }
 

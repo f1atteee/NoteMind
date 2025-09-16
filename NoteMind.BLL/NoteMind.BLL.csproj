@@ -8,6 +8,11 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="14.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="9.0.9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NoteMind.DAL\NoteMind.DAL.csproj" />
   </ItemGroup>
 
 </Project>
