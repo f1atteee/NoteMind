@@ -44,7 +44,6 @@ namespace NoteMind.BLL.Services
             if (existingTask == null)
                 throw new KeyNotFoundException($"Task with Id {id} not found");
 
-            // Мапимо DTO на існуючу сутність
             _mapper.Map(dto, existingTask);
             existingTask.UpdatedAt = DateTime.UtcNow;
 
