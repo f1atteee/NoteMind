@@ -12,6 +12,6 @@ namespace NoteMind.BLL.Dtos
         public TaskStatus Status { get; set; }
         public TaskPriority Priority { get; set; }
 
-        public DateTime CreatedAt { get; set; }
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     }
 }

@@ -9,6 +9,7 @@ namespace NoteMind.API.MapProfiles
         public MapProfile()
         {
             CreateMap<TaskRequestModel, TaskRequestDto>().ReverseMap();
+            CreateMap<TaskRequestModel, TaskDto>().ReverseMap();
         }
     }
 }
