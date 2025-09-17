@@ -12,9 +12,9 @@ namespace NoteMind.BLL.Services
             : base(mapper, unitOfWork)
         {}
 
-        public async Task<IEnumerable<TaskDto>> GetAll(int skip, int take, int? status)
+        public async Task<IEnumerable<TaskDto>> GetAll(int? status)
         {
-            var tasks = await _unitOfWork.TaskRepository.GetByLimitAsync(skip, take);
+            var tasks = await _unitOfWork.TaskRepository.GetAllAsync();
             if (status != null)
                 tasks = tasks.Where(x => x.Status == status).ToList();
             return _mapper.Map<IEnumerable<TaskDto>>(tasks);
@@ -44,7 +44,6 @@ namespace NoteMind.BLL.Services
             if (existingTask == null)
                 throw new KeyNotFoundException($"Task with Id {id} not found");
 
-            // Мапимо DTO на існуючу сутність
             _mapper.Map(dto, existingTask);
             existingTask.UpdatedAt = DateTime.UtcNow;
 

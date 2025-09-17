@@ -10,7 +10,7 @@ namespace NoteMind.DAL
         public static void GetDIDataBaseLayer(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddDbContext<NoteMindDbContext>(options =>
-                options.UseSqlServer(configuration.GetConnectionString("GeneralConnection")));
+                options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
         }
