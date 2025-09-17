@@ -23,8 +23,8 @@ namespace NoteMind.API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAll(int skip, int take, TaskStatus? status = null)
-            => Ok(await _taskService.GetAll(skip, take, (int?)status));
+        public async Task<IActionResult> GetAll(TaskStatus? status = null)
+            => Ok(await _taskService.GetAll((int?)status));
 
         [HttpGet("{id:long}")]
         public async Task<IActionResult> GetById(long id)
@@ -41,7 +41,7 @@ namespace NoteMind.API.Controllers
                 return BadRequest("Title is required");
 
             var created = await _taskService.Create(_mapper.Map<TaskDto>(dto));
-            return CreatedAtAction(nameof(GetById), new { id = created.Id }, created);
+            return Ok(created);
         }
 
         [HttpPut("{id:long}")]
